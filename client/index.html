@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Collaborative Canvas</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="toolbar">
+        <label>Color: <input id="color" type="color" value="#000000"></label>
+        <label>Width: <input id="width" type="range" min="1" max="40" value="4"></label>
+        <button id="brush">Brush</button>
+        <button id="eraser">Eraser</button>
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+        <div id="users"></div>
+        <div id="debug" class="debug-panel">Debug: initializing…</div>
+      </div>
+      <div id="canvasWrap">
+        <canvas id="canvas"></canvas>
+        <canvas id="cursors" class="overlay"></canvas>
+        <canvas id="debugOverlay" class="overlay"></canvas>
+        <div id="debug-pointer"></div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="websocket.js"></script>
+    <script src="canvas.js"></script>
+    <script src="main.js"></script>
+  </body>
+  </html>

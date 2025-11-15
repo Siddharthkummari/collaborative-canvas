@@ -1,0 +1,36 @@
+body, html { height: 100%; margin: 0; font-family: system-ui, Arial; }
+#app { display:flex; flex-direction:column; height:100%; }
+#toolbar { background:#f3f3f3; padding:8px; display:flex; gap:8px; align-items:center }
+#canvasWrap { flex:1; position:relative; }
+canvas { width:100%; height:100%; display:block; background: #fff; }
+canvas.overlay { position:absolute; left:0; top:0; pointer-events:none }
+#debugOverlay { z-index: 5; }
+#users { margin-left:auto; font-size:0.9rem }
+.cursor { position:absolute; width:10px; height:10px; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none }
+
+/* Debug panel */
+.debug-panel {
+	margin-left:12px;
+	padding:6px 8px;
+	background: rgba(0,0,0,0.7);
+	color: #fff;
+	font-size: 12px;
+	border-radius: 6px;
+	min-width:160px;
+}
+
+/* Debug pointer indicator */
+#debug-pointer {
+	position: fixed;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: rgba(255,0,0,0.9);
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	display: none;
+}
+
+/* make canvas visible with border for debugging */
+#canvas { border: 1px solid rgba(0,0,0,0.08); }
